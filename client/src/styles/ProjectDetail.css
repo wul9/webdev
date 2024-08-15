@@ -1,0 +1,100 @@
+p {
+  font-family: sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+}
+
+body {
+  padding-top: 4rem;
+}
+
+.project-searchbar,
+.member-searchbar {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.project-details {
+  display: inline-block;
+  margin-left: 4%;
+  vertical-align: top;
+  flex: 1;
+  height: 70%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.project-search,
+.member-search {
+  align-items: center;
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid black; */
+}
+
+.project-member-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.member-card {
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+  align-items: center;
+}
+
+.member-profile-pic,
+.profile-pic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 2px;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.member-name {
+  display: inline-block;
+  text-overflow: wrap;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.project-container {
+  margin: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* fix member name overflow */
+
+@media (max-width: 800px) {
+  .project-details {
+    display: block;
+    box-sizing: border-box;
+    margin: 2rem 0 0 0;
+  }
+
+  .project-display {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .project-container {
+    margin: 3rem;
+    display: block;
+  }
+}
