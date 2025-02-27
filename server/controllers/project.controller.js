@@ -20,4 +20,4 @@ async function getProjects(req, res) {
 //     }
 //   }
 
-module.export = { getProjects };
+module.exports = { getProjects };
