@@ -6,25 +6,25 @@ import AddButton from "./AddButton";
 function ProjectDetail({ id }: { id: Key }) {
   const [projectMembers, setProjectMembers] = useState<Member[]>();
 
-  useEffect(() => {
-    const fetchMembers = async () => {
-      const res = await fetch(`http://localhost:3000/projects/${id}/members`);
-      const membersJson = await res.json();
-      setProjectMembers(
-        membersJson.map(
-          (member: any) =>
-            ({
-              firstName: member.firstName,
-              lastName: member.lastName,
-              profilePic: member.profilePic,
-              projects: member.projects,
-              email: member.email,
-              id: member._id,
-            } as Member)
-        )
-      );
-    };
+  const fetchMembers = async () => {
+    const res = await fetch(`http://localhost:3000/projects/${id}/members`);
+    const membersJson = await res.json();
+    setProjectMembers(
+      membersJson.map(
+        (member: any) =>
+          ({
+            firstName: member.firstName,
+            lastName: member.lastName,
+            profilePic: member.profilePic,
+            projects: member.projects,
+            email: member.email,
+            id: member._id,
+          } as Member)
+      )
+    );
+  };
 
+  useEffect(() => {
     fetchMembers();
   }, []);
 

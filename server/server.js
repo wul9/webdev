@@ -29,8 +29,7 @@ app.use(cors());
 //   }
 // });
 
-const dbURI =
-  "mongodb+srv://lw755:be8XJ6S2MX1jaKsV@webdev.w8shc2g.mongodb.net/webdev?retryWrites=true&w=majority&appName=Webdev";
+const dbURI = process.env.DBURI;
 
 async function connectDB() {
   await mongoose
