@@ -38,26 +38,10 @@ function ProjectPage() {
     } as Member);
   };
 
-  const fetchMemberRefresh = async (requestType: string) => {
-    const res = await fetch("http://localhost:3000/projects", {
-      method: requestType,
-      headers: { "Content-Type": "application/json" },
-    });
-    const memberJson = await res.json();
-    setMemberData({
-      firstName: memberJson.firstName,
-      lastName: memberJson.lastName,
-      profilePic: memberJson.profilePic,
-      projects: memberJson.projects,
-      email: memberJson.email,
-      id: memberJson._id,
-    } as Member);
-  };
-
   useEffect(() => {
     const performanceEntries = performance.getEntriesByType("navigation");
     (performanceEntries[0] as PerformanceNavigationTiming).type === "reload"
-      ? fetchMemberRefresh("GET")
+      ? fetchMember("GET")
       : fetchMember("POST");
     // window.addEventListener("load", () => {
     //   fetchMember("GET");
