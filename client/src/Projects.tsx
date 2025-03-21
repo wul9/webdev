@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import ProjectDetail from "./components/ProjectDetail";
+
 import { useState, useEffect } from "react";
 
 import "./styles/Header.css";
@@ -8,6 +9,7 @@ import "./styles/ProjectDetail.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ProjectDisplay from "./components/ProjectDisplay";
+import ToDo from "./components/ToDo";
 import { Member, Project } from "./interfaces";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -56,6 +58,7 @@ function ProjectPage() {
         <div className="project-container">
           <ProjectDisplay projects={memberData.projects} />
           <ProjectDetail id={memberData.projects[selectedProject]} />
+          <ToDo />
         </div>
       </>
     )
