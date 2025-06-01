@@ -8,13 +8,16 @@ export default function Navbar() {
 
       <nav
          style={{
+        top: 0,
+        right: 0,
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         height: '60px',
+        width: '100%',
         backgroundColor: 'white',
-        color: 'white',
         fontFamily: 'Verdana',
+        paddingRight: '20px'
       }}
     >
       <a href="/" style={headingStyle}>Home</a>
